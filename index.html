@@ -193,7 +193,6 @@
       const selectedEnergyClass = $(this).find('option:selected');
      alert(`Set type: ${selectedEnergyClass.text()}`);
         emptyTable();
-
          for(const x of jsonData){
             if(selectedEnergyClass.text() == x.energyClass){
                 addRow(x);
