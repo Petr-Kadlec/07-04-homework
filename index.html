@@ -157,13 +157,50 @@
       }
     });
     // Here will fallow function for filtering
-    $('#type-select').change(function () {
+        $('#type-select').change(function () {
       const selectedType = $(this).find('option:selected');
-      alert(`Set type: ${selectedType.text()}`);
-      emptyTable();
-      // TODO: filter data
-      console.log(jsonData);
+       alert(`Set type: ${selectedType.text()}`);
+        emptyTable();
+
+         for(const x of jsonData){
+            if(selectedType.text() == x.type){
+                addRow(x);
+            }
+         }
     });
+     $('#sub-type-select').change(function () {
+      const selectedSubType = $(this).find('option:selected');
+       alert(`Set type: ${selectedSubType.text()}`);
+        emptyTable();
+
+         for(const x of jsonData){
+            if(selectedSubType.text() == x.subtype){
+                addRow(x);
+            }
+         }
+    });
+      $('#offer-type-select').change(function () {
+      const selectedOfferType = $(this).find('option:selected');
+      alert(`Set type: ${selectedOfferType.text()}`);
+        emptyTable();
+         for(const x of jsonData){
+            if(selectedOfferType.text() == x.offerType){
+                addRow(x);
+            }
+         }
+        });
+         $('#energy-class-select').change(function () {
+      const selectedEnergyClass = $(this).find('option:selected');
+     alert(`Set type: ${selectedEnergyClass.text()}`);
+        emptyTable();
+
+         for(const x of jsonData){
+            if(selectedEnergyClass.text() == x.energyClass){
+                addRow(x);
+            }
+         }
+    });
+
   });
 </script>
 </body>
